@@ -39,7 +39,7 @@
 		$SD.on('sendToPropertyInspector', (jsonObj) => receivedDataFromPlugin(jsonObj));
 
 		function receivedDataFromPlugin(jsonObj) {
-			// console.log('receivedDataFromPlugin: ', jsonObj);
+			 console.log('receivedDataFromPlugin: ', jsonObj);
 			if (jsonObj && jsonObj.payload) {
 				if (jsonObj.payload.hasOwnProperty('clock_index')) {
 					const oClockSelector = document.querySelector(".clockSelector");
@@ -89,7 +89,7 @@
 
 		function sendValueToPlugin(value, param) {
 
-			//console.log("SENDING VALUE TO PLUGIN: ", value, uuid, actionInfo);
+			console.log("SENDING VALUE TO PLUGIN: ", value, uuid, actionInfo);
 
 			if ($SD && $SD.connection) {
 				var payload = {};
