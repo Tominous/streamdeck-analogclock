@@ -47,7 +47,7 @@ function revealSdpiWrapper () {
 
 // our method to pass values to the plugin
 function sendValueToPlugin (value, param) {
-    // console.log($SD, $SD.readyState, $SD.actionInfo, $SD.uuid, param, value);
+     console.log($SD, $SD.readyState, $SD.actionInfo, $SD.uuid, param, value);
     if ($SD.connection && ($SD.connection.readyState === 1)) {
         const json = {
             'action': $SD.actionInfo['action'],
@@ -155,7 +155,7 @@ function prepareDOMElements (baseElement) {
 function handleSdpiItemClick (e, idx) {
     /** Following items are containers, so we won't handle clicks on them */
     if (['OL', 'UL', 'TABLE'].includes(e.tagName)) { return; }
-    // console.log('--- handleSdpiItemClick ---', e, `type: ${e.type}`, e.tagName, `inner: ${e.innerText}`);
+     console.log('--- handleSdpiItemClick ---', e, `type: ${e.type}`, e.tagName, `inner: ${e.innerText}`);
 
     /** SPANS are used inside a control as 'labels'
      * If a SPAN element calls this function, it has a class of 'clickable' set and is thereby handled as
@@ -226,7 +226,7 @@ function handleSdpiItemClick (e, idx) {
             info.innerText = s.length > 28 ? s.substr(0, 10) + '...' + s.substr(s.length - 10, s.length) : s;
         }
     }
-    // console.log(returnValue);
+     console.log(returnValue);
     sendValueToPlugin(returnValue, 'sdpi_collection');
 }
 
